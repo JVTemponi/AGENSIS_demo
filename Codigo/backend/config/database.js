@@ -1,12 +1,12 @@
 const { Sequelize } = require("sequelize");
 
-const isRailwayEnv = process.env.MYSQL_URL; // Detecta se a variável está presente
+const isRailwayEnv = process.env.MYSQL_PUBLIC_URL; // Detecta se a variável está presente
 
 let sequelize;
 
 if (isRailwayEnv) {
   // Usar variável de conexão direta do Railway
-  sequelize = new Sequelize(process.env.MYSQL_URL, {
+  sequelize = new Sequelize(process.env.MYSQL_PUBLIC_URL, {
     dialect: "mysql",
     logging: console.log,
     dialectOptions: {

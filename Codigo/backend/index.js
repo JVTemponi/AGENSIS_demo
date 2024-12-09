@@ -42,7 +42,7 @@ app.use('/api', ClienteRatingRoutes);
 //require('./models/index');
 
 console.log("Ambiente:", process.env.NODE_ENV);
-console.log("URL do Banco (Railway):", process.env.MYSQL_URL);
+console.log("URL do Banco (Railway):", process.env.MYSQL_PUBLIC_URL);
 
 db.connect();
 
