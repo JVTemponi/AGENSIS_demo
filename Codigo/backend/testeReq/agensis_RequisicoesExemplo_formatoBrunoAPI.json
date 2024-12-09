@@ -1,0 +1,1515 @@
+{
+  "name": "Agensis",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "Agenda",
+      "seq": 2,
+      "request": {
+        "url": "http://localhost:3002/agenda/CriarEventos",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"titulo\": \"teste via bruno\",\n  \"descricao\": \"\",\n  \"inicio\": \"\",\n  \"fim\" : \"\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "folder",
+      "name": "Artista",
+      "items": [
+        {
+          "type": "http",
+          "name": "AtualizarPerfilArtistaPorId",
+          "seq": 7,
+          "request": {
+            "url": "http://localhost:3002/api//artistaPerfil/:id",
+            "method": "PUT",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"perfilArtista\":\"admin\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "CriarArtista",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3002/api/artistas",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"nome\" : \"Joao\",\n  \"sobrenome\" : \"Temponi\",\n  \"cpf\" : \"084.088.538-33\",\n  \"habilidades\" : \"\",\n  \"experiencia\" : \"\",\n  \"usuarioArtista\": {\n    \"email\": \"dentrosistemas@gmail.com\",\n    \"senha\": \"senha123\"\n  },\n  \"perfilArtista\" : \"Artista SR\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "DeletarArtistaPorId",
+          "seq": 7,
+          "request": {
+            "url": "http://localhost:3002/api//artistas/:id",
+            "method": "DELETE",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "5",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "CompletarCadastroArtistaPorId",
+          "seq": 5,
+          "request": {
+            "url": "http://localhost:3002/api/artistas/completarCadastro/:id",
+            "method": "PUT",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"habilidades\": \"Carinhoso, atencioso, um bom moço\",\n  \"experiencia\": \"Senior em edição de vídeo desde 2015\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "ListarArtistaPorId",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3002/api/artistas/:id",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "ListarArtistaPorUsuarioId",
+          "seq": 4,
+          "request": {
+            "url": "http://localhost:3002/api/artistas/usuario/:usuarioId",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "usuarioId",
+                "value": "4",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "ListarTodosArtistas",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:3002/api/artistas",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Cliente",
+      "items": [
+        {
+          "type": "http",
+          "name": "AlterarClientePorId",
+          "seq": 4,
+          "request": {
+            "url": "http://localhost:3002/api/clientes/:id",
+            "method": "PUT",
+            "headers": [
+              {
+                "name": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJwZXJmaWwiOiJhZG1pbiIsInN0YXR1cyI6IjEiLCJlbWFpbCI6ImFkbWluMkBnbWFpbC5jb20iLCJpYXQiOjE3Mjg5NjUyNzYsImV4cCI6MTcyODk3NjA3Nn0.jtbL5Tr2fmb0EinqQ4YVE-OAcTM3fOQiqCA-zhuHo9g",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n    \"nome\": \"João Victor\",\n    \"sobrenome\": \"Temponi\",\n    \"cpf\": 12345678910,\n    \"data_nascimento\": \"2008-10-21\",\n    \"telefone\": 33333333333\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "BuscarClientePorUsuarioId",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:3002/api/clientes/usuario/:usuarioId",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "usuarioId",
+                "value": "3",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "CompletarCadastroPorId",
+          "seq": 5,
+          "request": {
+            "url": "http://localhost:3002/api/clientes/completarCadastro/:id",
+            "method": "PUT",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "2",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"cpf\": \"14409989867\",\n  \"data_nascimento\": \"1999-06-12\",\n  \"telefone\": 31983334933\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "CriarCliente",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3002/api/clientes",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"nome\": \"Juan dois\",\n  \"sobrenome\": \"Temponi dois\",\n  \"cpf\": null,\n  \"dataNascimento\": null,\n  \"telefone\": null,\n  \"usuarioCLiente\": {\n    \"email\": \"juanclientedois@email.com\",\n    \"senha\": \"senha123\"\n  }\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "DeletarClientePorId",
+          "seq": 6,
+          "request": {
+            "url": "http://localhost:3002/api/clientes/:id",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJwZXJmaWwiOiJhZG1pbiIsInN0YXR1cyI6IjEiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImlhdCI6MTcyOTk5NDM3NSwiZXhwIjoxNzMwMDA1MTc1fQ.66-PEHCyIPON-0rf2wsMAGUGEvFN3hGXPyGCJaPAJ_Q",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "3",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "ListarTodosClientes",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3002/api/clientes",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJwZXJmaWwiOiJhZG1pbiIsInN0YXR1cyI6IjEiLCJlbWFpbCI6ImFkbWluMkBnbWFpbC5jb20iLCJpYXQiOjE3Mjg5NjUyNzYsImV4cCI6MTcyODk3NjA3Nn0.jtbL5Tr2fmb0EinqQ4YVE-OAcTM3fOQiqCA-zhuHo9g",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "ItemProjeto",
+      "items": [
+        {
+          "type": "http",
+          "name": "Adicionar Proposta",
+          "seq": 7,
+          "request": {
+            "url": "http://localhost:3002/api/itemProjeto/adicionarPropostaItemProjeto/:id",
+            "method": "PUT",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "4",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"descricao\":\"XXXXXXXXXXXX\",\n  \"valor\":900.00,\n  \"prazo\":\"2024-12-30\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Assumir Item",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:3002/api/itemProjeto/assumirItemProjeto/:id",
+            "method": "PUT",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "5",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"artista_id\":1\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Criar Item Projeto",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3002/api/itemProjeto",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"dadosItemCampos\":[\n    { \n      \"nome_campo\":\"Turno\",\n      \"valor_digitado\":\"Mnhã\"\n    },\n    {\n      \"nome_campo\":\"Local\",\n      \"valor_digitado\":\"studio\"\n    }\n  ],\n  \"projeto_id\" : 1,\n  \"servico_id\": 2,\n  \"cliente_id\": 1\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Listar itens do projeto",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3002/api/itemProjeto/projeto/:projeto_id",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "projeto_id",
+                "value": "1",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Todos",
+          "seq": 8,
+          "request": {
+            "url": "http://localhost:3002/api/itemProjeto",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Listar por cliente",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:3002/api/itemProjeto/cliente/:cliente_id",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "cliente_id",
+                "value": "1",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Listar por artista",
+          "seq": 4,
+          "request": {
+            "url": "http://localhost:3002/api/itemProjeto/artista/:artista_id",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "artista_id",
+                "value": "1",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "LIstar por usuario",
+          "seq": 8,
+          "request": {
+            "url": "http://localhost:3002/api/itemProjeto/usuariologado/:usuario_id",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "usuario_id",
+                "value": "3",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Listar por status",
+          "seq": 9,
+          "request": {
+            "url": "http://localhost:3002/api/itemProjeto/status/:status_nome",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "status_nome",
+                "value": "Novo",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Pacote",
+      "items": [
+        {
+          "type": "http",
+          "name": "Criar Pacote",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3002/api/pacotes",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Perfil",
+      "items": [
+        {
+          "type": "http",
+          "name": "AlterarPerfilPorId",
+          "seq": 5,
+          "request": {
+            "url": "http://localhost:3002/api/perfis/:id",
+            "method": "PUT",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "2",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"nome\" : \"Artista Junior\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "CriarPerfil",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3002/api/perfis",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJwZXJmaWwiOiJhZG1pbiIsInN0YXR1cyI6IjEiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImlhdCI6MTczMTI2Mzg4OCwiZXhwIjoxNzMxMjc0Njg4fQ.Ni4zpIa2gfl5rt0-kKFnB_4zKp-STCl4bKFj5LBiONw",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"nome\" : \"Artista SR\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "DeletarPerfilPorId",
+          "seq": 6,
+          "request": {
+            "url": "http://localhost:3002/api/perfis/:id",
+            "method": "DELETE",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "4",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "ListarPerfilPorId",
+          "seq": 4,
+          "request": {
+            "url": "http://localhost:3002/api/perfis/:id",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.0.0",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "ListarPerfilPorNome",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:3002/api/perfilNome/:nome",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.0.0",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "name": "nome",
+                "value": "admin",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "ListarTodosPerfis",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3002/api/perfis",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Permissoes",
+      "items": [
+        {
+          "type": "http",
+          "name": "ListarPermissaoPorId",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3002/api/permissoes/:id",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "4",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "ListarTodasPermissoes",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3002/api/permissoes",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJwZXJmaWwiOiJhZG1pbiIsInN0YXR1cyI6IjEiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImlhdCI6MTczMTY5NTI4MSwiZXhwIjoxNzMxNzA2MDgxfQ.iTGCfBMPHtuXYZCk5FDh1zz5RcfcGr47zttJWqpi7mk",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Permissoes X Perfil",
+      "items": [
+        {
+          "type": "http",
+          "name": "CriarPermissaoPerfil",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3002/api/permissaoPerfis",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJwZXJmaWwiOiJhZG1pbiIsInN0YXR1cyI6IjEiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImlhdCI6MTczMTI2Mzg4OCwiZXhwIjoxNzMxMjc0Njg4fQ.Ni4zpIa2gfl5rt0-kKFnB_4zKp-STCl4bKFj5LBiONw",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"perfil\":\"cliente\",\n  \"permissao\":\"AlterarSenhaPorId\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "DeletarPermissaoPerfilPorId",
+          "seq": 5,
+          "request": {
+            "url": "http://localhost:3002/api/permissaoPerfis/:perfilId/:permissaoId",
+            "method": "DELETE",
+            "headers": [],
+            "params": [
+              {
+                "name": "perfilId",
+                "value": "6",
+                "type": "path",
+                "enabled": true
+              },
+              {
+                "name": "permissaoId",
+                "value": "5",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "ListarPermissoesPorNomePerfil",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:3002/api/permissaoPerfisPorNomePerfil/:nome",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "nome",
+                "value": "diretor",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "ListarPermissoesPorPerfilId",
+          "seq": 4,
+          "request": {
+            "url": "http://localhost:3002/api/permissaoPerfis/:perfilId",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "perfilId",
+                "value": "6",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "ListarTodasPermissoesPerfis",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3002/api/permissaoPerfis",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Servico",
+      "items": [
+        {
+          "type": "http",
+          "name": "Alterar Servico",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:3002/api/servicos/:id",
+            "method": "PUT",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "12",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"nome\":\"Fotografia\",\n  \"descricao\":\"Fotografia sem estúdio\",\n  \"campos\":[\n    { \n      \"nome\":\"Quantidade\",\n      \"tipo\":\"Numero Inteiro\",\n      \"obrigatorio\":\"true\"\n    },\n    {\n      \"nome\":\"Edição das imagens\",\n      \"tipo\":\"Selecao\",\n      \"obrigatorio\":\"true\"\n    },\n    {\n      \"nome\":\"Período da manhã\",\n      \"tipo\":\"Selecao\",\n      \"obrigatorio\":\"false\"\n    }\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Criar servico",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3002/api/servicos",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"nome\":\"Fotografia\",\n  \"descricao\":\"Sessão de fotografia\",\n  \"campos\":[\n    { \n      \"nome\":\"Quantidade\",\n      \"tipo\":\"Texto\",\n      \"obrigatorio\":\"true\"\n    },\n    {\n      \"nome\":\"Estúdio\",\n      \"tipo\":\"texto\",\n      \"obrigatorio\":\"true\"\n    }\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Listar todos",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3002/api/servicos",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Usuario",
+      "items": [
+        {
+          "type": "http",
+          "name": "AlterarSenhaPorId",
+          "seq": 6,
+          "request": {
+            "url": "http://localhost:3002/api/usuarios/alterarSenha/:id",
+            "method": "PUT",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.0.0",
+                "enabled": true
+              },
+              {
+                "name": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJwZXJmaWwiOiJhZG1pbiIsInN0YXR1cyI6IjEiLCJlbWFpbCI6ImFkbWluMkBnbWFpbC5jb20iLCJpYXQiOjE3Mjg5NTU2OTMsImV4cCI6MTcyODk2NjQ5M30.pez4gRkv1QOMfTA9ndplQozJuTfgIqCY-JP2ZN_emfc",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "2",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n    \"senhaAtual\": \"admin\",\n    \"novaSenha\": \"admin2\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "CriarUsuario",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3002/api/usuarios",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.0.0",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"email\" : \"admin2@gmail.com\",\n  \"senha\" : \"admin\",\n  \"perfil\" : \"admin\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "DeletarUsuarioPorId",
+          "seq": 7,
+          "request": {
+            "url": "http://localhost:3002/api/usuarios/:id",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.0.0",
+                "enabled": true
+              },
+              {
+                "name": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJwZXJmaWwiOiJhZG1pbiIsInN0YXR1cyI6IjEiLCJlbWFpbCI6ImFkbWluMkBnbWFpbC5jb20iLCJpYXQiOjE3Mjg5NTU2OTMsImV4cCI6MTcyODk2NjQ5M30.pez4gRkv1QOMfTA9ndplQozJuTfgIqCY-JP2ZN_emfc",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "2",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n    \"senhaAtual\": \"admin\",\n    \"novaSenha\": \"admin2\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "ListarTodosUsuarios",
+          "seq": 4,
+          "request": {
+            "url": "http://localhost:3002/api/usuarios",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.0.0",
+                "enabled": true
+              },
+              {
+                "name": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJwZXJmaWwiOiJhZG1pbiIsInN0YXR1cyI6IjEiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImlhdCI6MTczMTgwOTc4OCwiZXhwIjoxNzMxODIwNTg4fQ.I4nmA4z7sViipAggoKQTzur8xE8RVpYTbTFgozwYqz8",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "ListarUsuarioPorEmail",
+          "seq": 5,
+          "request": {
+            "url": "http://localhost:3002/api/usuarios/email/:email",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.0.0",
+                "enabled": true
+              },
+              {
+                "name": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJwZXJmaWwiOiJhZG1pbiIsInN0YXR1cyI6IjEiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImlhdCI6MTczMTI2Mzg4OCwiZXhwIjoxNzMxMjc0Njg4fQ.Ni4zpIa2gfl5rt0-kKFnB_4zKp-STCl4bKFj5LBiONw",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "name": "email",
+                "value": "admin@admin.com",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "ListarUsuarioPorId",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:3002/api/usuarios/:id",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.0.0",
+                "enabled": true
+              },
+              {
+                "name": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJwZXJmaWwiOiJhZG1pbiIsInN0YXR1cyI6IjEiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImlhdCI6MTczMTgwOTc4OCwiZXhwIjoxNzMxODIwNTg4fQ.I4nmA4z7sViipAggoKQTzur8xE8RVpYTbTFgozwYqz8",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "2",
+                "type": "path",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Login",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3002/api/login",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "User-Agent",
+                "value": "insomnia/10.0.0",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"email\" : \"admin@admin.com\",\n  \"senha\" : \"admin\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "Agensis",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}

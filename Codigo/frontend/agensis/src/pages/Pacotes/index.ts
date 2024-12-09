@@ -1,0 +1,1 @@
+export { default as Pacotes } from './PacotesTable';

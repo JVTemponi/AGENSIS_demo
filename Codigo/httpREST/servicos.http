@@ -1,0 +1,38 @@
+@baseUrl = http://localhost:3002
+
+### Get all services
+{{baseUrl}}/api/servicos
+
+### Inserir serviço
+
+POST {{baseUrl}}/api/servicos
+Content-Type: application/json
+
+{
+  "nome": "Nome do Serviço",
+  "descricao": "descricao",  
+  "campos": [
+        { "nome": "Campo nome", "tipo": "Texto", "obrigatorio": true },
+        { "nome": "Novo campo", "tipo": "Numero Inteiro", "obrigatorio": false }
+    ]
+}
+
+### Get Servico especifico
+{{baseUrl}}/api/servicos/26
+
+
+### Alterar serviço
+PUT {{baseUrl}}/api/servicos/26
+Content-Type: application/json
+
+{
+  "nome": "Nome do Serviço Atualizado22",
+  "descricao": "nova descricao",
+  "campos": [
+        { "nome": "Campo novo atualizado", "tipo": "Texto", "obrigatorio": true },
+        { "nome": "Novo campo inserido", "tipo": "Texto", "obrigatorio": false }
+    ]
+}
+
+### Deletar servico
+DELETE {{baseUrl}}/api/servicos/19
