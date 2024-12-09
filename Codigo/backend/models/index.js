@@ -142,14 +142,14 @@ async function criaRegistrosIniciais() {
 async function initializeDatabase() {
     try {
         // Define associações
-        defineAssociacoes();
+        //defineAssociacoes();
 
         // Sincroniza o banco de dados
-        await sequelize.sync({ alter: true });
+        //await sequelize.sync({ alter: true });
         console.log('Tabelas sincronizadas com sucesso!');
 
         // Cria registros iniciais
-        await criaRegistrosIniciais();
+        //await criaRegistrosIniciais();
         console.log('Registros iniciais criados com sucesso!');
     } catch (error) {
         console.error('Erro ao inicializar o banco de dados:', error);
