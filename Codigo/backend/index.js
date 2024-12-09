@@ -1,8 +1,9 @@
 //Importação de dependências
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config();
 const express = require('express');
 const db = require('./config/database');
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 //Importação das rotas
 const PacotesRoutes = require('./routes/PacotesRoutes');
@@ -40,6 +41,11 @@ app.use('/api', ClienteRatingRoutes);
 // Importação dos modelos e definições de associações
 //require('./models/index');
 
+console.log("Ambiente:", process.env.NODE_ENV);
+console.log("URL do Banco (Railway):", process.env.MYSQL_URL);
+
 db.connect();
 
-app.listen(process.env.PORT || 3000);
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+  });

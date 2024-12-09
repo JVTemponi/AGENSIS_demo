@@ -1,28 +1,41 @@
-
 const { Sequelize } = require("sequelize");
- 
-// Conexão com o banco de dados da Railway
-const sequelize = new Sequelize(
-  process.env.MYSQL_DATABASE, // Nome do banco de dados
-  process.env.MYSQL_USER,     // Usuário do banco
-  process.env.MYSQL_PASSWORD, // Senha
-  {
-    host: process.env.MYSQL_HOST, // Host da Railway
-    port: process.env.MYSQL_PORT, // Porta da Railway (normalmente 3306 para MySQL)
-    dialect: "mysql",            // Dialeto do banco de dados
+
+const isRailwayEnv = process.env.MYSQL_URL; // Detecta se a variável está presente
+
+let sequelize;
+
+if (isRailwayEnv) {
+  // Usar variável de conexão direta do Railway
+  sequelize = new Sequelize(process.env.MYSQL_URL, {
+    dialect: "mysql",
     logging: console.log,
     dialectOptions: {
       ssl: {
-        require: true,                // Railway exige SSL
-        rejectUnauthorized: false,   // Permitir certificados autoassinados
+        require: true,
+        rejectUnauthorized: false,
       },
     },
-    retry: {
-      max: 9,                         // Tenta reconectar até 5 vezes em caso de falha
-    },
-  }
-);
-
+  });
+} else {
+  // Configuração local ou alternativa
+  sequelize = new Sequelize(
+    process.env.MYSQL_DATABASE,
+    process.env.MYSQL_USER,
+    process.env.MYSQL_PASSWORD,
+    {
+      host: process.env.MYSQL_HOST,
+      port: process.env.MYSQL_PORT,
+      dialect: "mysql",
+      logging: console.log,
+      dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false,
+        },
+      },
+    }
+  );
+}
 
 // Teste de conexão
 async function connect() {
