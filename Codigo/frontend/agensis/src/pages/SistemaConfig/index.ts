@@ -1,1 +1,0 @@
-export { Sistema } from './Sistema';
