@@ -5,6 +5,10 @@ const db = require('./config/database');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+
+app.use(express.json()); // Para JSON
+app.use(express.urlencoded({ extended: true }));
+
 //Importação das rotas
 const PacotesRoutes = require('./routes/PacotesRoutes');
 const UsuarioRoutes = require('./routes/UsuarioRoutes');
