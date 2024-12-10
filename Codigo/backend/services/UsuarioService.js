@@ -100,7 +100,7 @@ class UsuarioService {
           status: usuario.status,
           email: usuario.email,
         },
-        process.env.SECRET,
+        'artespro',
         { expiresIn: "3h" }
       );
 
