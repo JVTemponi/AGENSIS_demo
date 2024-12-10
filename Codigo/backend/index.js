@@ -20,6 +20,7 @@ const ServicoRoutes = require('./routes/ServicoRoutes');
 const ItemProjetoRoutes = require('./routes/ItemProjetoRoutes');
 //const AgendaRoutes = require('./routes/AgendaRoutes');
 const ClienteRatingRoutes = require('./routes/ClienteRatingRoutes');
+const InitRoutes = require('./routes/InitRoutes');
 
 //Endereçamento das rotas
 app.use('/api', PacotesRoutes);
@@ -36,7 +37,7 @@ app.use('/api', ServicoRoutes);
 app.use('/api', ItemProjetoRoutes);
 app.use('/api', ClienteRatingRoutes);
 //app.use('/', AgendaRoutes);
-
+app.use('/api', InitRoutes);
 
 // Importação dos modelos e definições de associações
 //require('./models/index');
