@@ -19,7 +19,7 @@ const PermissaoService = require('../services/PermissaoService');
 const ClienteRatingModel = require('./ClienteRatingModel');
 const TransacoesPorItensModel = require('./TransacoesPorItensModel');
 
-function defineAssociacoes() {
+async function defineAssociacoes() {
 
     // Associações de Usuario
     UsuarioModel.belongsTo(PerfilModel, { foreignKey: 'perfil_id', as: 'perfil' });
@@ -95,7 +95,7 @@ function defineAssociacoes() {
     // Associações de TransacaoFinanceira
     TransacaoFinanceiraModel.hasMany(TransacoesPorItensModel , { foreignKey: 'transacao_financeira_id', as: 'transacaoItem' });
 
-
+    await sequelize.sync({ alter: true });
 }
 
 async function criaRegistrosIniciais() {
@@ -178,4 +178,5 @@ module.exports = {
     ReuniaoModel,
     TransacaoFinanceiraModel,
     TransacoesPorItensModel,
+    defineAssociacoes,
 };
